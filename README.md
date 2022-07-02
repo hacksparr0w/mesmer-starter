@@ -8,7 +8,8 @@ clone this repository, fire up the Mesmer dev server using `npm run dev` and sta
  - All necessary dependencies including [Mesmer][2], [React][3] and [ReactDOM][4].
  - An example `mesmer.json` configuration.
  - Ready to be used HTML document template.
- - Some basic styling implemented using [@emotion/styled][5].
+ - Some basic styling implemented using [@emotion/styled][5] and code
+ highlighting with [prism][6].
  - A simple MDX blog post.
 
 [1]: https://raw.githubusercontent.com/hacksparr0w/mesmer-starter/main/banner.png
@@ -16,3 +17,4 @@ clone this repository, fire up the Mesmer dev server using `npm run dev` and sta
 [3]: https://reactjs.org/docs/getting-started.html
 [4]: https://reactjs.org/docs/react-dom.html
 [5]: https://emotion.sh/
+[6]: https://github.com/PrismJS/prism/
