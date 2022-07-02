@@ -1,0 +1,10 @@
+{
+  "metadata": {
+    "name": "Mesmer Starter",
+    "githubUrl": "https://github.com/hacksparr0w/mesmer"
+  },
+  "pages": [
+    "./src/page/*.jsx",
+    "./src/page/post/*.mdx"
+  ]
+}

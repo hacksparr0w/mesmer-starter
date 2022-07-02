@@ -1,0 +1,32 @@
+{
+  "name": "mesmer-starter",
+  "version": "0.0.1",
+  "description": "A simple blog starter powered by Mesmer",
+  "scripts": {
+    "dev": "mesmer serve",
+    "build": "mesmer build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hacksparr0w/mesmer-starter.git"
+  },
+  "keywords": [
+    "simple",
+    "blog",
+    "starter",
+    "mesmer"
+  ],
+  "author": "hacksparr0w",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hacksparr0w/mesmer-starter/issues"
+  },
+  "homepage": "https://github.com/hacksparr0w/mesmer-starter#readme",
+  "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "mesmer": "file:../mesmer/mesmer-0.0.1.tgz",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
