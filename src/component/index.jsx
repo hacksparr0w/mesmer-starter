@@ -1,4 +1,5 @@
 export * as HtmlTemplate from "./HtmlTemplate";
+export * as Post from "./Post";
 
 export { default as Card } from "./Card";
 export { default as CardAsideContent } from "./CardAsideContent";

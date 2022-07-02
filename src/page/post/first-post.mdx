@@ -1,4 +1,7 @@
 import { formatDate } from "../../utility";
+import { Post } from "../../component";
+
+export const parent = Post;
 
 export const metadata = {
   title: "First blog post",
@@ -8,11 +11,28 @@ export const metadata = {
   emoji: "waving-hand"
 }
 
-# Hello, World!
+You can find this post in the `src/page/post` folder. Try running the Mesmer
+dev server using `npm run dev`, modifying this blog post and see it being
+rebuild on the fly!
 
-What's cookin?
+To add new posts, simply add more MDX documents into the `src/page/post`
+folder. And don't forget to annotate them with metadata. A metadata annotation
+in MDX post can look like this:
 
 ```javascript
-
-console.log("Hello, World");
+export const metadata = {
+  title: "Another blog post",
+  subtitle: "This is yet another blog post.",
+  publishedOn: "12 Apr, 2022",
+  topic: "blogging",
+  emoji: "waving-hand"
+}
 ```
+
+Oh, and did I tell you about the cool code highlighting? The code is
+highlighted using [Prism][1], but you can swap it for any other highligting
+library of your liking.
+
+For more info, check out the Mesmer docs.
+
+[1]: https://github.com/PrismJS/prism

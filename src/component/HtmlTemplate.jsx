@@ -1,5 +1,7 @@
 import React from "react";
 
+import highlightTheme from "../asset/prism/theme.css";
+
 export const containerSelector = "#app";
 
 export default ({
@@ -25,6 +27,7 @@ export default ({
         href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@400;700&display=swap"
         rel="stylesheet"
       />
+      <link rel="stylesheet" href={highlightTheme} />
     </head>
     <body>
       <div id={containerSelector.slice(1)}>
@@ -32,5 +35,9 @@ export default ({
       </div>
     </body>
     <script src={clientBundleFilePath} />
+    <script dangerouslySetInnerHTML={{ __html: `
+      window.Prism = window.Prism || {};
+      window.Prism.manual = true;
+    `}} />
   </html>
 );
