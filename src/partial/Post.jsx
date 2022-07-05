@@ -1,14 +1,10 @@
 import styled from "@emotion/styled";
 import React, { useEffect } from "react";
 
-import Container from "./Container";
-import Footer from "./Footer";
 import * as HtmlTemplate from "./HtmlTemplate";
-import Navbar from "./Navbar";
-import Page from "./Page";
-import theme from "../theme";
-
 import "../asset/prism";
+import { Container, Footer, Navbar, Page } from "../component";
+import theme from "../theme";
 
 export const template = HtmlTemplate;
 

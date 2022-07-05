@@ -4,7 +4,6 @@ import React from "react";
 import {
   Code,
   Container,
-  HtmlTemplate,
   Footer,
   Navbar,
   Page,
@@ -12,6 +11,7 @@ import {
   Tweemoji
 } from "../component";
 
+import { HtmlTemplate } from "../partial";
 import theme from "../theme";
 
 export const metadata = {
