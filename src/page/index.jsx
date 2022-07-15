@@ -59,7 +59,7 @@ export default ({
   }
 }) => {
   const posts = pages.filter(
-    ({ documentFilePath }) => documentFilePath.includes("post")
+    ({ moduleFilePath }) => moduleFilePath.includes("post")
   );
 
   return (
@@ -86,10 +86,10 @@ export default ({
           <Posts>
             <h2>Posts</h2>
             {posts.map(post => {
-              const { documentFilePath } = post;
+              const { documentFileUrl } = post;
 
               return (
-                <PostCard key={documentFilePath} post={post} />
+                <PostCard key={documentFileUrl} post={post} />
               )
             })}
           </Posts>

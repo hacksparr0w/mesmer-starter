@@ -14,7 +14,7 @@ const PostCardMainContent = styled(CardMainContent)`
 
 export default ({
   post: {
-    documentFilePath,
+    documentFileUrl,
     emoji,
     publishedOn,
     subtitle,
@@ -23,7 +23,7 @@ export default ({
   },
   ...rest
 }) => (
-  <Card href={documentFilePath} {...rest}>
+  <Card href={documentFileUrl} {...rest}>
     <CardAsideContent>
       <Tweemoji size="medium" emoji={emoji} />
     </CardAsideContent>

@@ -6,7 +6,7 @@ export const containerSelector = "#app";
 
 export default ({
   metadata: {
-    build: { clientBundleFilePath },
+    build: { clientBundleFileUrl },
     page: { title }
   },
   children
@@ -33,11 +33,11 @@ export default ({
       <div id={containerSelector.slice(1)}>
         {children}
       </div>
+      <script src={clientBundleFileUrl} />
+      <script dangerouslySetInnerHTML={{ __html: `
+        window.Prism = window.Prism || {};
+        window.Prism.manual = 1;
+      `}}/>
     </body>
-    <script src={clientBundleFilePath} />
-    <script dangerouslySetInnerHTML={{ __html: `
-      window.Prism = window.Prism || {};
-      window.Prism.manual = true;
-    `}} />
   </html>
 );
