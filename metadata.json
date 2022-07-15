@@ -1,6 +1,6 @@
 {
   "build": {
-    "clientBundleFilePath": "/mesmer-client.js"
+    "clientBundleFileUrl": "https://github.com/hacksparr0w/mesmer-starter/mesmer-client.js"
   },
   "project": {
     "name": "Mesmer Starter",
@@ -11,17 +11,17 @@
       "title": "Welcome to Mesmer!",
       "moduleFilePath": "./src/page/index.jsx",
       "moduleExportName": "indexd9bd70b55a10a898c8ac536aaf313f9d",
-      "documentFilePath": "/index.html"
+      "documentFileUrl": "https://github.com/hacksparr0w/mesmer-starter/index.html"
     },
     {
       "title": "First blog post",
       "subtitle": "In this blog post, you'll find out about some cool things you can do with Mesmer.",
-      "publishedOn": "Jul 5, 2022",
+      "publishedOn": "Jul 15, 2022",
       "topic": "blogging",
       "emoji": "waving-hand",
       "moduleFilePath": "./src/page/post/first-post.mdx",
       "moduleExportName": "first_post65408c0e66a0917cc78f35f7a734cccf",
-      "documentFilePath": "/post/first-post.html"
+      "documentFileUrl": "https://github.com/hacksparr0w/mesmer-starter/post/first-post.html"
     }
   ]
 }

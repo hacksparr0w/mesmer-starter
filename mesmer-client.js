@@ -22900,7 +22900,7 @@
   // src/asset/prism/index.js
   var require_prism = __commonJS({
     "src/asset/prism/index.js"(exports, module) {
-      var _self = typeof window != "undefined" ? window : typeof WorkerGlobalScope != "undefined" && self instanceof WorkerGlobalScope ? self : {};
+      var _self = "undefined" != typeof window ? window : "undefined" != typeof WorkerGlobalScope && self instanceof WorkerGlobalScope ? self : {};
       var Prism2 = function(e) {
         var n = /(?:^|\s)lang(?:uage)?-([\w-]+)(?=\s|$)/i, t = 0, r = {}, a = { manual: e.Prism && e.Prism.manual, disableWorkerMessageHandler: e.Prism && e.Prism.disableWorkerMessageHandler, util: { encode: function e2(n2) {
           return n2 instanceof i ? new i(n2.type, e2(n2.content), n2.alias) : Array.isArray(n2) ? n2.map(e2) : n2.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/\u00a0/g, " ");
@@ -22935,7 +22935,7 @@
         }, setLanguage: function(e2, t2) {
           e2.className = e2.className.replace(RegExp(n, "gi"), ""), e2.classList.add("language-" + t2);
         }, currentScript: function() {
-          if (typeof document == "undefined")
+          if ("undefined" == typeof document)
             return null;
           if ("currentScript" in document)
             return document.currentScript;
@@ -22986,7 +22986,7 @@
             if (n2.hasOwnProperty(o2)) {
               t2.call(n2, o2, n2[o2], r2 || o2);
               var s2 = n2[o2], u2 = a.util.type(s2);
-              u2 !== "Object" || i2[l2(s2)] ? u2 !== "Array" || i2[l2(s2)] || (i2[l2(s2)] = true, e2(s2, t2, o2, i2)) : (i2[l2(s2)] = true, e2(s2, t2, null, i2));
+              "Object" !== u2 || i2[l2(s2)] ? "Array" !== u2 || i2[l2(s2)] || (i2[l2(s2)] = true, e2(s2, t2, o2, i2)) : (i2[l2(s2)] = true, e2(s2, t2, null, i2));
             }
         } }, plugins: {}, highlightAll: function(e2, n2) {
           a.highlightAllUnder(document, e2, n2);
@@ -22994,17 +22994,17 @@
           var r2 = { callback: t2, container: e2, selector: 'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code' };
           a.hooks.run("before-highlightall", r2), r2.elements = Array.prototype.slice.apply(r2.container.querySelectorAll(r2.selector)), a.hooks.run("before-all-elements-highlight", r2);
           for (var i2, l2 = 0; i2 = r2.elements[l2++]; )
-            a.highlightElement(i2, n2 === true, r2.callback);
+            a.highlightElement(i2, true === n2, r2.callback);
         }, highlightElement: function(n2, t2, r2) {
           var i2 = a.util.getLanguage(n2), l2 = a.languages[i2];
           a.util.setLanguage(n2, i2);
           var o2 = n2.parentElement;
-          o2 && o2.nodeName.toLowerCase() === "pre" && a.util.setLanguage(o2, i2);
+          o2 && "pre" === o2.nodeName.toLowerCase() && a.util.setLanguage(o2, i2);
           var s2 = { element: n2, language: i2, grammar: l2, code: n2.textContent };
           function u2(e2) {
             s2.highlightedCode = e2, a.hooks.run("before-insert", s2), s2.element.innerHTML = s2.highlightedCode, a.hooks.run("after-highlight", s2), a.hooks.run("complete", s2), r2 && r2.call(s2.element);
           }
-          if (a.hooks.run("before-sanity-check", s2), (o2 = s2.element.parentElement) && o2.nodeName.toLowerCase() === "pre" && !o2.hasAttribute("tabindex") && o2.setAttribute("tabindex", "0"), !s2.code)
+          if (a.hooks.run("before-sanity-check", s2), (o2 = s2.element.parentElement) && "pre" === o2.nodeName.toLowerCase() && !o2.hasAttribute("tabindex") && o2.setAttribute("tabindex", "0"), !s2.code)
             return a.hooks.run("complete", s2), void (r2 && r2.call(s2.element));
           if (a.hooks.run("before-highlight", s2), s2.grammar)
             if (t2 && e.Worker) {
@@ -23082,7 +23082,7 @@
                         j += (w = w.next).value.length;
                       if (A = j -= w.value.length, w.value instanceof i)
                         continue;
-                      for (var C = w; C !== n2.tail && (j < O || typeof C.value == "string"); C = C.next)
+                      for (var C = w; C !== n2.tail && (j < O || "string" == typeof C.value); C = C.next)
                         L++, j += C.value.length;
                       L--, E = e2.slice(A, j), P.index -= A;
                     } else if (!(P = l(b, 0, E, m)))
@@ -23114,7 +23114,7 @@
           n2.next = r2, r2.prev = n2, e2.length -= a2;
         }
         if (e.Prism = a, i.stringify = function e2(n2, t2) {
-          if (typeof n2 == "string")
+          if ("string" == typeof n2)
             return n2;
           if (Array.isArray(n2)) {
             var r2 = "";
@@ -23139,11 +23139,11 @@
         }
         if (g && (a.filename = g.src, g.hasAttribute("data-manual") && (a.manual = true)), !a.manual) {
           var h = document.readyState;
-          h === "loading" || h === "interactive" && g && g.defer ? document.addEventListener("DOMContentLoaded", f) : window.requestAnimationFrame ? window.requestAnimationFrame(f) : window.setTimeout(f, 16);
+          "loading" === h || "interactive" === h && g && g.defer ? document.addEventListener("DOMContentLoaded", f) : window.requestAnimationFrame ? window.requestAnimationFrame(f) : window.setTimeout(f, 16);
         }
         return a;
       }(_self);
-      typeof module != "undefined" && module.exports && (module.exports = Prism2), typeof global != "undefined" && (global.Prism = Prism2);
+      "undefined" != typeof module && module.exports && (module.exports = Prism2), "undefined" != typeof global && (global.Prism = Prism2);
       Prism2.languages.clike = { comment: [{ pattern: /(^|[^\\])\/\*[\s\S]*?(?:\*\/|$)/, lookbehind: true, greedy: true }, { pattern: /(^|[^\\:])\/\/.*/, lookbehind: true, greedy: true }], string: { pattern: /(["'])(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/, greedy: true }, "class-name": { pattern: /(\b(?:class|extends|implements|instanceof|interface|new|trait)\s+|\bcatch\s+\()[\w.\\]+/i, lookbehind: true, inside: { punctuation: /[.\\]/ } }, keyword: /\b(?:break|catch|continue|do|else|finally|for|function|if|in|instanceof|new|null|return|throw|try|while)\b/, boolean: /\b(?:false|true)\b/, function: /\b\w+(?=\()/, number: /\b0x[\da-f]+\b|(?:\b\d+(?:\.\d*)?|\B\.\d+)(?:e[+-]?\d+)?/i, operator: /[<>]=?|[!=]=?=?|--?|\+\+?|&&?|\|\|?|[?*/~^%]/, punctuation: /[{}[\];(),.:]/ };
       Prism2.languages.javascript = Prism2.languages.extend("clike", { "class-name": [Prism2.languages.clike["class-name"], { pattern: /(^|[^$\w\xA0-\uFFFF])(?!\s)[_$A-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\.(?:constructor|prototype))/, lookbehind: true }], keyword: [{ pattern: /((?:^|\})\s*)catch\b/, lookbehind: true }, { pattern: /(^|[^.]|\.\.\.\s*)\b(?:as|assert(?=\s*\{)|async(?=\s*(?:function\b|\(|[$\w\xA0-\uFFFF]|$))|await|break|case|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally(?=\s*(?:\{|$))|for|from(?=\s*(?:['"]|$))|function|(?:get|set)(?=\s*(?:[#\[$\w\xA0-\uFFFF]|$))|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|static|super|switch|this|throw|try|typeof|undefined|var|void|while|with|yield)\b/, lookbehind: true }], function: /#?(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*(?:\.\s*(?:apply|bind|call)\s*)?\()/, number: { pattern: RegExp("(^|[^\\w$])(?:NaN|Infinity|0[bB][01]+(?:_[01]+)*n?|0[oO][0-7]+(?:_[0-7]+)*n?|0[xX][\\dA-Fa-f]+(?:_[\\dA-Fa-f]+)*n?|\\d+(?:_\\d+)*n|(?:\\d+(?:_\\d+)*(?:\\.(?:\\d+(?:_\\d+)*)?)?|\\.\\d+(?:_\\d+)*)(?:[Ee][+-]?\\d+(?:_\\d+)*)?)(?![\\w$])"), lookbehind: true }, operator: /--|\+\+|\*\*=?|=>|&&=?|\|\|=?|[!=]==|<<=?|>>>?=?|[-+*/%&|^!=<>]=?|\.{3}|\?\?=?|\?\.?|[~:]/ }), Prism2.languages.javascript["class-name"][0].pattern = /(\b(?:class|extends|implements|instanceof|interface|new)\s+)[\w.\\]+/, Prism2.languages.insertBefore("javascript", "keyword", { regex: { pattern: RegExp(`((?:^|[^$\\w\\xA0-\\uFFFF."'\\])\\s]|\\b(?:return|yield))\\s*)/(?:(?:\\[(?:[^\\]\\\\\r
 ]|\\\\.)*\\]|\\\\.|[^/\\\\\\[\r
@@ -23154,9 +23154,9 @@
 ])+/[dgimyus]{0,7}v[dgimyus]{0,7})(?=(?:\\s|/\\*(?:[^*]|\\*(?!/))*\\*/)*(?:$|[\r
 ,.;:})\\]]|//))`), lookbehind: true, greedy: true, inside: { "regex-source": { pattern: /^(\/)[\s\S]+(?=\/[a-z]*$)/, lookbehind: true, alias: "language-regex", inside: Prism2.languages.regex }, "regex-delimiter": /^\/|\/$/, "regex-flags": /^[a-z]+$/ } }, "function-variable": { pattern: /#?(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*[=:]\s*(?:async\s*)?(?:\bfunction\b|(?:\((?:[^()]|\([^()]*\))*\)|(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*)\s*=>))/, alias: "function" }, parameter: [{ pattern: /(function(?:\s+(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*)?\s*\(\s*)(?!\s)(?:[^()\s]|\s+(?![\s)])|\([^()]*\))+(?=\s*\))/, lookbehind: true, inside: Prism2.languages.javascript }, { pattern: /(^|[^$\w\xA0-\uFFFF])(?!\s)[_$a-z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*=>)/i, lookbehind: true, inside: Prism2.languages.javascript }, { pattern: /(\(\s*)(?!\s)(?:[^()\s]|\s+(?![\s)])|\([^()]*\))+(?=\s*\)\s*=>)/, lookbehind: true, inside: Prism2.languages.javascript }, { pattern: /((?:\b|\s|^)(?!(?:as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|undefined|var|void|while|with|yield)(?![$\w\xA0-\uFFFF]))(?:(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*\s*)\(\s*|\]\s*\(\s*)(?!\s)(?:[^()\s]|\s+(?![\s)])|\([^()]*\))+(?=\s*\)\s*\{)/, lookbehind: true, inside: Prism2.languages.javascript }], constant: /\b[A-Z](?:[A-Z_]|\dx?)*\b/ }), Prism2.languages.insertBefore("javascript", "string", { hashbang: { pattern: /^#!.*/, greedy: true, alias: "comment" }, "template-string": { pattern: /`(?:\\[\s\S]|\$\{(?:[^{}]|\{(?:[^{}]|\{[^}]*\})*\})+\}|(?!\$\{)[^\\`])*`/, greedy: true, inside: { "template-punctuation": { pattern: /^`|`$/, alias: "string" }, interpolation: { pattern: /((?:^|[^\\])(?:\\{2})*)\$\{(?:[^{}]|\{(?:[^{}]|\{[^}]*\})*\})+\}/, lookbehind: true, inside: { "interpolation-punctuation": { pattern: /^\$\{|\}$/, alias: "punctuation" }, rest: Prism2.languages.javascript } }, string: /[\s\S]+/ } }, "string-property": { pattern: /((?:^|[,{])[ \t]*)(["'])(?:\\(?:\r\n|[\s\S])|(?!\2)[^\\\r\n])*\2(?=\s*:)/m, lookbehind: true, greedy: true, alias: "property" } }), Prism2.languages.insertBefore("javascript", "operator", { "literal-property": { pattern: /((?:^|[,{])[ \t]*)(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*:)/m, lookbehind: true, alias: "property" } }), Prism2.languages.markup && (Prism2.languages.markup.tag.addInlined("script", "javascript"), Prism2.languages.markup.tag.addAttribute("on(?:abort|blur|change|click|composition(?:end|start|update)|dblclick|error|focus(?:in|out)?|key(?:down|up)|load|mouse(?:down|enter|leave|move|out|over|up)|reset|resize|scroll|select|slotchange|submit|unload|wheel)", "javascript")), Prism2.languages.js = Prism2.languages.javascript;
       !function() {
-        if (typeof Prism2 != "undefined" && typeof document != "undefined") {
+        if ("undefined" != typeof Prism2 && "undefined" != typeof document) {
           var e = "line-numbers", n = /\n(?!$)/g, t = Prism2.plugins.lineNumbers = { getLine: function(n2, t2) {
-            if (n2.tagName === "PRE" && n2.classList.contains(e)) {
+            if ("PRE" === n2.tagName && n2.classList.contains(e)) {
               var i2 = n2.querySelector(".line-numbers-rows");
               if (i2) {
                 var r2 = parseInt(n2.getAttribute("data-start"), 10) || 1, s = r2 + (i2.children.length - 1);
@@ -23184,10 +23184,10 @@
           });
         }
         function r(e2) {
-          if ((e2 = e2.filter(function(e3) {
+          if (0 != (e2 = e2.filter(function(e3) {
             var n2, t3 = (n2 = e3, n2 ? window.getComputedStyle ? getComputedStyle(n2) : n2.currentStyle || null : null)["white-space"];
-            return t3 === "pre-wrap" || t3 === "pre-line";
-          })).length != 0) {
+            return "pre-wrap" === t3 || "pre-line" === t3;
+          })).length) {
             var t2 = e2.map(function(e3) {
               var t3 = e3.querySelector("code"), i2 = e3.querySelector(".line-numbers-rows");
               if (t3 && i2) {
@@ -23208,7 +23208,7 @@
               });
             }), t2.forEach(function(e3) {
               for (var n2 = e3.sizer, t3 = e3.lineHeights, i2 = 0, r2 = 0; r2 < t3.length; r2++)
-                t3[r2] === void 0 && (t3[r2] = n2.children[i2++].getBoundingClientRect().height);
+                void 0 === t3[r2] && (t3[r2] = n2.children[i2++].getBoundingClientRect().height);
             }), t2.forEach(function(e3) {
               var n2 = e3.sizer, t3 = e3.element.querySelector(".line-numbers-rows");
               n2.style.display = "none", n2.innerHTML = "", e3.lineHeights.forEach(function(e4, n3) {
@@ -26033,10 +26033,10 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
   var import_react7 = __toESM(require_react());
 
   // src/asset/font-awesome/github.svg
-  var github_default = "/github-UOQCKUIY.svg";
+  var github_default = "https://github.com/hacksparr0w/mesmer-starter/github-UOQCKUIY.svg";
 
   // src/asset/font-awesome/star.svg
-  var star_default = "/star-5D7FQCJR.svg";
+  var star_default = "https://github.com/hacksparr0w/mesmer-starter/star-5D7FQCJR.svg";
 
   // src/component/FaIcon.jsx
   var IMAGES = {
@@ -26061,13 +26061,13 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
   var import_react8 = __toESM(require_react());
 
   // src/asset/tweemoji/butterfly.svg
-  var butterfly_default = "/butterfly-DEK5YJ5E.svg";
+  var butterfly_default = "https://github.com/hacksparr0w/mesmer-starter/butterfly-DEK5YJ5E.svg";
 
   // src/asset/tweemoji/red-heart.svg
-  var red_heart_default = "/red-heart-RA4PAFFF.svg";
+  var red_heart_default = "https://github.com/hacksparr0w/mesmer-starter/red-heart-RA4PAFFF.svg";
 
   // src/asset/tweemoji/waving-hand.svg
-  var waving_hand_default = "/waving-hand-QLCOE2OI.svg";
+  var waving_hand_default = "https://github.com/hacksparr0w/mesmer-starter/waving-hand-QLCOE2OI.svg";
 
   // src/component/Tweemoji.jsx
   var EMOJI_IMAGES = {
@@ -26195,7 +26195,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
 `;
   var PostCard_default = ({
     post: {
-      documentFilePath,
+      documentFileUrl,
       emoji,
       publishedOn,
       subtitle,
@@ -26204,7 +26204,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
     },
     ...rest
   }) => /* @__PURE__ */ import_react12.default.createElement(Card_default, {
-    href: documentFilePath,
+    href: documentFileUrl,
     ...rest
   }, /* @__PURE__ */ import_react12.default.createElement(CardAsideContent_default, null, /* @__PURE__ */ import_react12.default.createElement(Tweemoji_default, {
     size: "medium",
@@ -26267,13 +26267,13 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
   var import_react14 = __toESM(require_react());
 
   // src/asset/prism/theme.css
-  var theme_default2 = "/theme-HJNWFABD.css";
+  var theme_default2 = "https://github.com/hacksparr0w/mesmer-starter/theme-HJNWFABD.css";
 
   // src/partial/HtmlTemplate.jsx
   var containerSelector = "#app";
   var HtmlTemplate_default = ({
     metadata: {
-      build: { clientBundleFilePath },
+      build: { clientBundleFileUrl },
       page: { title }
     },
     children
@@ -26300,14 +26300,14 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
     href: theme_default2
   })), /* @__PURE__ */ import_react14.default.createElement("body", null, /* @__PURE__ */ import_react14.default.createElement("div", {
     id: containerSelector.slice(1)
-  }, children)), /* @__PURE__ */ import_react14.default.createElement("script", {
-    src: clientBundleFilePath
+  }, children), /* @__PURE__ */ import_react14.default.createElement("script", {
+    src: clientBundleFileUrl
   }), /* @__PURE__ */ import_react14.default.createElement("script", {
     dangerouslySetInnerHTML: { __html: `
-      window.Prism = window.Prism || {};
-      window.Prism.manual = true;
-    ` }
-  }));
+        window.Prism = window.Prism || {};
+        window.Prism.manual = 1;
+      ` }
+  })));
 
   // src/partial/Post.jsx
   var Post_exports = {};
@@ -26391,7 +26391,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
       project: { name, githubUrl }
     }
   }) => {
-    const posts = pages.filter(({ documentFilePath }) => documentFilePath.includes("post"));
+    const posts = pages.filter(({ moduleFilePath: moduleFilePath2 }) => moduleFilePath2.includes("post"));
     return /* @__PURE__ */ import_react16.default.createElement(Page_default, null, /* @__PURE__ */ import_react16.default.createElement("header", null, /* @__PURE__ */ import_react16.default.createElement(Navbar_default, {
       projectName: name,
       githubUrl
@@ -26399,9 +26399,9 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
       size: "big",
       emoji: "butterfly"
     }), /* @__PURE__ */ import_react16.default.createElement("h1", null, "Welcome to Mesmer!"), /* @__PURE__ */ import_react16.default.createElement("p", null, "This is your first static site generated with Mesmer. You can change this page by editing\xA0", /* @__PURE__ */ import_react16.default.createElement(Code_default, null, moduleFilePath), " file. Go nuts!")))), /* @__PURE__ */ import_react16.default.createElement("main", null, /* @__PURE__ */ import_react16.default.createElement(Container_default, null, /* @__PURE__ */ import_react16.default.createElement(Posts, null, /* @__PURE__ */ import_react16.default.createElement("h2", null, "Posts"), posts.map((post) => {
-      const { documentFilePath } = post;
+      const { documentFileUrl } = post;
       return /* @__PURE__ */ import_react16.default.createElement(PostCard_default, {
-        key: documentFilePath,
+        key: documentFileUrl,
         post
       });
     })))), /* @__PURE__ */ import_react16.default.createElement(Footer_default, null));
@@ -26487,14 +26487,19 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
   var pageModules = {};
   pageModules["indexd9bd70b55a10a898c8ac536aaf313f9d"] = page_exports;
   pageModules["first_post65408c0e66a0917cc78f35f7a734cccf"] = first_post_exports;
-  (async (pageModules2, metadataFilePath) => {
+  (async (pageModules2, metadataFileUrl) => {
     let { pathname } = document.location;
     if (pathname.endsWith("/")) {
       pathname += "index.html";
     }
-    const result = await fetch(metadataFilePath);
+    const result = await fetch(metadataFileUrl);
     const metadata3 = await result.json();
-    const pageMetadata = metadata3.pages.find(({ documentFilePath }) => documentFilePath === pathname);
+    const pageMetadata = metadata3.pages.find(({ documentFileUrl }) => {
+      if (documentFileUrl.startsWith("/")) {
+        return documentFileUrl === pathname;
+      }
+      return new URL(documentFileUrl).pathname === pathname;
+    });
     metadata3["page"] = pageMetadata;
     const module = pageModules2[pageMetadata.moduleExportName];
     const { parent: parent2, template: childTemplate, default: childComponent } = module;
@@ -26511,7 +26516,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
     const element = import_react17.default.createElement(component, { metadata: metadata3 });
     const container = document.querySelector(template3.containerSelector);
     import_client.default.hydrateRoot(container, element);
-  })(pageModules, "/metadata.json");
+  })(pageModules, "https://github.com/hacksparr0w/mesmer-starter/metadata.json");
 })();
 /**
  * @license React
