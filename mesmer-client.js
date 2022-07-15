@@ -26033,10 +26033,10 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
   var import_react7 = __toESM(require_react());
 
   // src/asset/font-awesome/github.svg
-  var github_default = "https://github.com/hacksparr0w/mesmer-starter/github-UOQCKUIY.svg";
+  var github_default = "https://hacksparr0w.github.io/mesmer-starter/github-UOQCKUIY.svg";
 
   // src/asset/font-awesome/star.svg
-  var star_default = "https://github.com/hacksparr0w/mesmer-starter/star-5D7FQCJR.svg";
+  var star_default = "https://hacksparr0w.github.io/mesmer-starter/star-5D7FQCJR.svg";
 
   // src/component/FaIcon.jsx
   var IMAGES = {
@@ -26061,13 +26061,13 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
   var import_react8 = __toESM(require_react());
 
   // src/asset/tweemoji/butterfly.svg
-  var butterfly_default = "https://github.com/hacksparr0w/mesmer-starter/butterfly-DEK5YJ5E.svg";
+  var butterfly_default = "https://hacksparr0w.github.io/mesmer-starter/butterfly-DEK5YJ5E.svg";
 
   // src/asset/tweemoji/red-heart.svg
-  var red_heart_default = "https://github.com/hacksparr0w/mesmer-starter/red-heart-RA4PAFFF.svg";
+  var red_heart_default = "https://hacksparr0w.github.io/mesmer-starter/red-heart-RA4PAFFF.svg";
 
   // src/asset/tweemoji/waving-hand.svg
-  var waving_hand_default = "https://github.com/hacksparr0w/mesmer-starter/waving-hand-QLCOE2OI.svg";
+  var waving_hand_default = "https://hacksparr0w.github.io/mesmer-starter/waving-hand-QLCOE2OI.svg";
 
   // src/component/Tweemoji.jsx
   var EMOJI_IMAGES = {
@@ -26267,7 +26267,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
   var import_react14 = __toESM(require_react());
 
   // src/asset/prism/theme.css
-  var theme_default2 = "https://github.com/hacksparr0w/mesmer-starter/theme-HJNWFABD.css";
+  var theme_default2 = "https://hacksparr0w.github.io/mesmer-starter/theme-HJNWFABD.css";
 
   // src/partial/HtmlTemplate.jsx
   var containerSelector = "#app";
@@ -26516,7 +26516,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
     const element = import_react17.default.createElement(component, { metadata: metadata3 });
     const container = document.querySelector(template3.containerSelector);
     import_client.default.hydrateRoot(container, element);
-  })(pageModules, "https://github.com/hacksparr0w/mesmer-starter/metadata.json");
+  })(pageModules, "https://hacksparr0w.github.io/mesmer-starter/metadata.json");
 })();
 /**
  * @license React
