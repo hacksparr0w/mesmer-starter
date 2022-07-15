@@ -4,7 +4,7 @@
     "githubUrl": "https://github.com/hacksparr0w/mesmer"
   },
   "build": {
-    "baseUrl": "https://github.com/hacksparr0w/mesmer-starter",
+    "baseUrl": "https://hacksparr0w.github.io/mesmer-starter",
     "pages": [
       "./src/page/*.jsx",
       "./src/page/post/*.mdx"
