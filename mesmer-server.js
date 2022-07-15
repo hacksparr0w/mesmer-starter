@@ -21533,10 +21533,10 @@ var Container_default = ({ children }) => /* @__PURE__ */ import_react.default.c
 var import_react2 = __toESM(require_react());
 
 // src/asset/font-awesome/github.svg
-var github_default = "https://hacksparr0w.github.io/mesmer-starter/github-UOQCKUIY.svg";
+var github_default = "/github-UOQCKUIY.svg";
 
 // src/asset/font-awesome/star.svg
-var star_default = "https://hacksparr0w.github.io/mesmer-starter/star-5D7FQCJR.svg";
+var star_default = "/star-5D7FQCJR.svg";
 
 // src/component/FaIcon.jsx
 var IMAGES = {
@@ -21562,13 +21562,13 @@ var import_react4 = __toESM(require_react());
 var import_react3 = __toESM(require_react());
 
 // src/asset/tweemoji/butterfly.svg
-var butterfly_default = "https://hacksparr0w.github.io/mesmer-starter/butterfly-DEK5YJ5E.svg";
+var butterfly_default = "/butterfly-DEK5YJ5E.svg";
 
 // src/asset/tweemoji/red-heart.svg
-var red_heart_default = "https://hacksparr0w.github.io/mesmer-starter/red-heart-RA4PAFFF.svg";
+var red_heart_default = "/red-heart-RA4PAFFF.svg";
 
 // src/asset/tweemoji/waving-hand.svg
-var waving_hand_default = "https://hacksparr0w.github.io/mesmer-starter/waving-hand-QLCOE2OI.svg";
+var waving_hand_default = "/waving-hand-QLCOE2OI.svg";
 
 // src/component/Tweemoji.jsx
 var EMOJI_IMAGES = {
@@ -21622,10 +21622,10 @@ var Footer = import_styled6.default.footer`
     vertical-align: sub;
   }
 `;
-var Footer_default = () => /* @__PURE__ */ import_react4.default.createElement(Footer, null, /* @__PURE__ */ import_react4.default.createElement(Container_default, null, /* @__PURE__ */ import_react4.default.createElement("p", null, "Created with ", /* @__PURE__ */ import_react4.default.createElement(Tweemoji_default, {
+var Footer_default = ({ githubUrl }) => /* @__PURE__ */ import_react4.default.createElement(Footer, null, /* @__PURE__ */ import_react4.default.createElement(Container_default, null, /* @__PURE__ */ import_react4.default.createElement("p", null, "Created with ", /* @__PURE__ */ import_react4.default.createElement(Tweemoji_default, {
   emoji: "red-heart"
 }), ", powered by\xA0", /* @__PURE__ */ import_react4.default.createElement("a", {
-  href: ""
+  href: githubUrl
 }, "Mesmer"), ".")));
 
 // src/component/Page.jsx
@@ -21750,8 +21750,8 @@ var Nav = import_styled8.default.nav`
     }
   }
 `;
-var Navbar_default = ({ projectName, githubUrl }) => /* @__PURE__ */ import_react8.default.createElement(Nav, null, /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement("p", null, /* @__PURE__ */ import_react8.default.createElement("a", {
-  href: "/index.html"
+var Navbar_default = ({ projectName, githubUrl, indexUrl }) => /* @__PURE__ */ import_react8.default.createElement(Nav, null, /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement("p", null, /* @__PURE__ */ import_react8.default.createElement("a", {
+  href: indexUrl
 }, projectName))), /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement("ul", null, /* @__PURE__ */ import_react8.default.createElement("li", null, /* @__PURE__ */ import_react8.default.createElement("a", {
   href: githubUrl
 }, /* @__PURE__ */ import_react8.default.createElement(FaIcon_default, {
@@ -21771,7 +21771,7 @@ __export(HtmlTemplate_exports, {
 var import_react9 = __toESM(require_react());
 
 // src/asset/prism/theme.css
-var theme_default2 = "https://hacksparr0w.github.io/mesmer-starter/theme-HJNWFABD.css";
+var theme_default2 = "/theme-HJNWFABD.css";
 
 // src/partial/HtmlTemplate.jsx
 var containerSelector = "#app";
@@ -21841,18 +21841,23 @@ var PostContent = import_styled9.default.div`
 `;
 var Post_default = ({
   metadata: {
+    pages,
     page: { title, publishedOn },
     project: { name, githubUrl }
   },
   children
 }) => {
+  const { documentFileUrl: indexUrl } = pages[0];
   (0, import_react10.useEffect)(() => {
     Prism.highlightAll();
   }, []);
   return /* @__PURE__ */ import_react10.default.createElement(Page_default, null, /* @__PURE__ */ import_react10.default.createElement("header", null, /* @__PURE__ */ import_react10.default.createElement(Navbar_default, {
     projectName: name,
+    githubUrl,
+    indexUrl
+  })), /* @__PURE__ */ import_react10.default.createElement(Main, null, /* @__PURE__ */ import_react10.default.createElement(Container_default, null, /* @__PURE__ */ import_react10.default.createElement(PostHeader, null, /* @__PURE__ */ import_react10.default.createElement("h1", null, title), /* @__PURE__ */ import_react10.default.createElement("p", null, "Published on ", publishedOn)), /* @__PURE__ */ import_react10.default.createElement(PostContent, null, children))), /* @__PURE__ */ import_react10.default.createElement(Footer_default, {
     githubUrl
-  })), /* @__PURE__ */ import_react10.default.createElement(Main, null, /* @__PURE__ */ import_react10.default.createElement(Container_default, null, /* @__PURE__ */ import_react10.default.createElement(PostHeader, null, /* @__PURE__ */ import_react10.default.createElement("h1", null, title), /* @__PURE__ */ import_react10.default.createElement("p", null, "Published on ", publishedOn)), /* @__PURE__ */ import_react10.default.createElement(PostContent, null, children))), /* @__PURE__ */ import_react10.default.createElement(Footer_default, null));
+  }));
 };
 
 // src/page/index.jsx
@@ -21896,10 +21901,12 @@ var page_default = ({
     project: { name, githubUrl }
   }
 }) => {
+  const { documentFileUrl: indexUrl } = pages[0];
   const posts = pages.filter(({ moduleFilePath: moduleFilePath2 }) => moduleFilePath2.includes("post"));
   return /* @__PURE__ */ import_react11.default.createElement(Page_default, null, /* @__PURE__ */ import_react11.default.createElement("header", null, /* @__PURE__ */ import_react11.default.createElement(Navbar_default, {
     projectName: name,
-    githubUrl
+    githubUrl,
+    indexUrl
   }), /* @__PURE__ */ import_react11.default.createElement(Container_default, null, /* @__PURE__ */ import_react11.default.createElement(Hero, null, /* @__PURE__ */ import_react11.default.createElement(Tweemoji_default, {
     size: "big",
     emoji: "butterfly"
@@ -21909,7 +21916,9 @@ var page_default = ({
       key: documentFileUrl,
       post
     });
-  })))), /* @__PURE__ */ import_react11.default.createElement(Footer_default, null));
+  })))), /* @__PURE__ */ import_react11.default.createElement(Footer_default, {
+    githubUrl
+  }));
 };
 
 // src/page/post/first-post.mdx

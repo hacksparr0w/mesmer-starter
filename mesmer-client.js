@@ -26033,10 +26033,10 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
   var import_react7 = __toESM(require_react());
 
   // src/asset/font-awesome/github.svg
-  var github_default = "https://hacksparr0w.github.io/mesmer-starter/github-UOQCKUIY.svg";
+  var github_default = "/github-UOQCKUIY.svg";
 
   // src/asset/font-awesome/star.svg
-  var star_default = "https://hacksparr0w.github.io/mesmer-starter/star-5D7FQCJR.svg";
+  var star_default = "/star-5D7FQCJR.svg";
 
   // src/component/FaIcon.jsx
   var IMAGES = {
@@ -26061,13 +26061,13 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
   var import_react8 = __toESM(require_react());
 
   // src/asset/tweemoji/butterfly.svg
-  var butterfly_default = "https://hacksparr0w.github.io/mesmer-starter/butterfly-DEK5YJ5E.svg";
+  var butterfly_default = "/butterfly-DEK5YJ5E.svg";
 
   // src/asset/tweemoji/red-heart.svg
-  var red_heart_default = "https://hacksparr0w.github.io/mesmer-starter/red-heart-RA4PAFFF.svg";
+  var red_heart_default = "/red-heart-RA4PAFFF.svg";
 
   // src/asset/tweemoji/waving-hand.svg
-  var waving_hand_default = "https://hacksparr0w.github.io/mesmer-starter/waving-hand-QLCOE2OI.svg";
+  var waving_hand_default = "/waving-hand-QLCOE2OI.svg";
 
   // src/component/Tweemoji.jsx
   var EMOJI_IMAGES = {
@@ -26121,10 +26121,10 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
     vertical-align: sub;
   }
 `;
-  var Footer_default = () => /* @__PURE__ */ import_react9.default.createElement(Footer, null, /* @__PURE__ */ import_react9.default.createElement(Container_default, null, /* @__PURE__ */ import_react9.default.createElement("p", null, "Created with ", /* @__PURE__ */ import_react9.default.createElement(Tweemoji_default, {
+  var Footer_default = ({ githubUrl }) => /* @__PURE__ */ import_react9.default.createElement(Footer, null, /* @__PURE__ */ import_react9.default.createElement(Container_default, null, /* @__PURE__ */ import_react9.default.createElement("p", null, "Created with ", /* @__PURE__ */ import_react9.default.createElement(Tweemoji_default, {
     emoji: "red-heart"
   }), ", powered by\xA0", /* @__PURE__ */ import_react9.default.createElement("a", {
-    href: ""
+    href: githubUrl
   }, "Mesmer"), ".")));
 
   // src/component/Page.jsx
@@ -26246,8 +26246,8 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
     }
   }
 `;
-  var Navbar_default = ({ projectName, githubUrl }) => /* @__PURE__ */ import_react13.default.createElement(Nav, null, /* @__PURE__ */ import_react13.default.createElement("div", null, /* @__PURE__ */ import_react13.default.createElement("p", null, /* @__PURE__ */ import_react13.default.createElement("a", {
-    href: "/index.html"
+  var Navbar_default = ({ projectName, githubUrl, indexUrl }) => /* @__PURE__ */ import_react13.default.createElement(Nav, null, /* @__PURE__ */ import_react13.default.createElement("div", null, /* @__PURE__ */ import_react13.default.createElement("p", null, /* @__PURE__ */ import_react13.default.createElement("a", {
+    href: indexUrl
   }, projectName))), /* @__PURE__ */ import_react13.default.createElement("div", null, /* @__PURE__ */ import_react13.default.createElement("ul", null, /* @__PURE__ */ import_react13.default.createElement("li", null, /* @__PURE__ */ import_react13.default.createElement("a", {
     href: githubUrl
   }, /* @__PURE__ */ import_react13.default.createElement(FaIcon_default, {
@@ -26267,7 +26267,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
   var import_react14 = __toESM(require_react());
 
   // src/asset/prism/theme.css
-  var theme_default2 = "https://hacksparr0w.github.io/mesmer-starter/theme-HJNWFABD.css";
+  var theme_default2 = "/theme-HJNWFABD.css";
 
   // src/partial/HtmlTemplate.jsx
   var containerSelector = "#app";
@@ -26336,18 +26336,23 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
 `;
   var Post_default = ({
     metadata: {
+      pages,
       page: { title, publishedOn },
       project: { name, githubUrl }
     },
     children
   }) => {
+    const { documentFileUrl: indexUrl } = pages[0];
     (0, import_react15.useEffect)(() => {
       Prism.highlightAll();
     }, []);
     return /* @__PURE__ */ import_react15.default.createElement(Page_default, null, /* @__PURE__ */ import_react15.default.createElement("header", null, /* @__PURE__ */ import_react15.default.createElement(Navbar_default, {
       projectName: name,
+      githubUrl,
+      indexUrl
+    })), /* @__PURE__ */ import_react15.default.createElement(Main, null, /* @__PURE__ */ import_react15.default.createElement(Container_default, null, /* @__PURE__ */ import_react15.default.createElement(PostHeader, null, /* @__PURE__ */ import_react15.default.createElement("h1", null, title), /* @__PURE__ */ import_react15.default.createElement("p", null, "Published on ", publishedOn)), /* @__PURE__ */ import_react15.default.createElement(PostContent, null, children))), /* @__PURE__ */ import_react15.default.createElement(Footer_default, {
       githubUrl
-    })), /* @__PURE__ */ import_react15.default.createElement(Main, null, /* @__PURE__ */ import_react15.default.createElement(Container_default, null, /* @__PURE__ */ import_react15.default.createElement(PostHeader, null, /* @__PURE__ */ import_react15.default.createElement("h1", null, title), /* @__PURE__ */ import_react15.default.createElement("p", null, "Published on ", publishedOn)), /* @__PURE__ */ import_react15.default.createElement(PostContent, null, children))), /* @__PURE__ */ import_react15.default.createElement(Footer_default, null));
+    }));
   };
 
   // src/page/index.jsx
@@ -26391,10 +26396,12 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
       project: { name, githubUrl }
     }
   }) => {
+    const { documentFileUrl: indexUrl } = pages[0];
     const posts = pages.filter(({ moduleFilePath: moduleFilePath2 }) => moduleFilePath2.includes("post"));
     return /* @__PURE__ */ import_react16.default.createElement(Page_default, null, /* @__PURE__ */ import_react16.default.createElement("header", null, /* @__PURE__ */ import_react16.default.createElement(Navbar_default, {
       projectName: name,
-      githubUrl
+      githubUrl,
+      indexUrl
     }), /* @__PURE__ */ import_react16.default.createElement(Container_default, null, /* @__PURE__ */ import_react16.default.createElement(Hero, null, /* @__PURE__ */ import_react16.default.createElement(Tweemoji_default, {
       size: "big",
       emoji: "butterfly"
@@ -26404,7 +26411,9 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
         key: documentFileUrl,
         post
       });
-    })))), /* @__PURE__ */ import_react16.default.createElement(Footer_default, null));
+    })))), /* @__PURE__ */ import_react16.default.createElement(Footer_default, {
+      githubUrl
+    }));
   };
 
   // src/page/post/first-post.mdx
@@ -26516,7 +26525,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
     const element = import_react17.default.createElement(component, { metadata: metadata3 });
     const container = document.querySelector(template3.containerSelector);
     import_client.default.hydrateRoot(container, element);
-  })(pageModules, "https://hacksparr0w.github.io/mesmer-starter/metadata.json");
+  })(pageModules, "/metadata.json");
 })();
 /**
  * @license React

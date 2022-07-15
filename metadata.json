@@ -1,6 +1,6 @@
 {
   "build": {
-    "clientBundleFileUrl": "https://hacksparr0w.github.io/mesmer-starter/mesmer-client.js"
+    "clientBundleFileUrl": "/mesmer-client.js"
   },
   "project": {
     "name": "Mesmer Starter",
@@ -11,7 +11,7 @@
       "title": "Welcome to Mesmer!",
       "moduleFilePath": "./src/page/index.jsx",
       "moduleExportName": "indexd9bd70b55a10a898c8ac536aaf313f9d",
-      "documentFileUrl": "https://hacksparr0w.github.io/mesmer-starter/index.html"
+      "documentFileUrl": "/index.html"
     },
     {
       "title": "First blog post",
@@ -21,7 +21,7 @@
       "emoji": "waving-hand",
       "moduleFilePath": "./src/page/post/first-post.mdx",
       "moduleExportName": "first_post65408c0e66a0917cc78f35f7a734cccf",
-      "documentFileUrl": "https://hacksparr0w.github.io/mesmer-starter/post/first-post.html"
+      "documentFileUrl": "/post/first-post.html"
     }
   ]
 }
