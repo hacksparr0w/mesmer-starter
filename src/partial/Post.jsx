@@ -29,11 +29,14 @@ const PostContent = styled.div`
 
 export default ({
   metadata: {
+    pages,
     page: { title, publishedOn },
     project: { name, githubUrl }
   },
   children
 }) => {
+  const { documentFileUrl: indexUrl } = pages[0];
+
   useEffect(() => {
     Prism.highlightAll();
   }, []);
@@ -41,7 +44,11 @@ export default ({
   return (
     <Page>
       <header>
-        <Navbar projectName={name} githubUrl={githubUrl} />
+        <Navbar
+          projectName={name}
+          githubUrl={githubUrl}
+          indexUrl={indexUrl}
+        />
       </header>
       <Main>
         <Container>
@@ -56,7 +63,7 @@ export default ({
           </PostContent>
         </Container>
       </Main>
-      <Footer />
+      <Footer githubUrl={githubUrl} />
     </Page>
   );
 };

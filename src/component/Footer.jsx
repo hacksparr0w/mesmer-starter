@@ -31,12 +31,12 @@ const Footer = styled.footer`
   }
 `;
 
-export default () => (
+export default ({ githubUrl }) => (
   <Footer>
     <Container>
       <p>
         Created with <Tweemoji emoji="red-heart" />, powered by&nbsp;
-        <a href="">Mesmer</a>.
+        <a href={githubUrl}>Mesmer</a>.
       </p>
     </Container>
   </Footer>

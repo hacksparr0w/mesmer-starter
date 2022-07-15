@@ -58,6 +58,7 @@ export default ({
     project: { name, githubUrl }
   }
 }) => {
+  const { documentFileUrl: indexUrl } = pages[0];
   const posts = pages.filter(
     ({ moduleFilePath }) => moduleFilePath.includes("post")
   );
@@ -68,6 +69,7 @@ export default ({
         <Navbar
           projectName={name}
           githubUrl={githubUrl}
+          indexUrl={indexUrl}
         />
         <Container>
           <Hero>
@@ -95,7 +97,7 @@ export default ({
           </Posts>
         </Container>
       </main>
-      <Footer />
+      <Footer githubUrl={githubUrl} />
     </Page>
   );
 };

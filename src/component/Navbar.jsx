@@ -38,11 +38,11 @@ const Nav = styled.nav`
   }
 `;
 
-export default ({ projectName, githubUrl }) => (
+export default ({ projectName, githubUrl, indexUrl }) => (
   <Nav>
     <div>
       <p>
-        <a href="/index.html">
+        <a href={indexUrl}>
           {projectName}
         </a>
       </p>
